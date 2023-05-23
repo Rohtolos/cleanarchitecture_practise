@@ -1,0 +1,1 @@
+class OperationException implements Exception {}

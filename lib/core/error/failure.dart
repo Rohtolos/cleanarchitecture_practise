@@ -1,0 +1,8 @@
+abstract class Failure {
+  const Failure({required this.errorMessage});
+  final String errorMessage;
+}
+
+class OperationFailure extends Failure {
+  OperationFailure({required super.errorMessage});
+}
