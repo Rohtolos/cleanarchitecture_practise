@@ -52,6 +52,26 @@ class HomePage extends StatelessWidget {
                         );
                       }
                     },
+                    tooltip: 'Refresh',
+                    child: const Icon(Icons.refresh),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      if (state is HomePageInitial ||
+                          state is HomePageCountState) {
+                        homePageBloc.add(
+                          IncrementEvent(
+                              number: (state is HomePageInitial)
+                                  ? state.countEntity.count
+                                  : (state as HomePageCountState)
+                                      .countEntity
+                                      .count),
+                        );
+                      }
+                    },
                     tooltip: 'Increment',
                     child: const Icon(Icons.add),
                   ),
